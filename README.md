@@ -1,6 +1,6 @@
 # Spaced Out: portfolio
 
-Source for [spaced1127.github.io](https://spaced1127.github.io).
+Source for [spaced1127.github.io](https://spaced1127.github.io). Live at the root of the user site.
 
 A single static page with no build step. Open `index.html`, or serve the folder:
 
