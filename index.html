@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spaced Out: software repair, local-first tools, unlikely ports</title>
+  <meta name="description" content="Spaced Out is a vibecoder, repair technician and game enjoyer. Local-first tools, a native Switch port of SVR 2011, and the occasional impossible fix.">
+  <meta name="theme-color" content="#EFEFEA">
+  <link rel="canonical" href="https://spaced1127.github.io/">
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Spaced Out: software repair, local-first tools, unlikely ports">
+  <meta property="og:description" content="Spaced Out is a vibecoder, repair technician and game enjoyer. Local-first tools, a native Switch port of SVR 2011, and the occasional impossible fix.">
+  <meta property="og:url" content="https://spaced1127.github.io/">
+  <meta property="og:image" content="https://spaced1127.github.io/assets/avatar.jpg">
+  <meta name="twitter:card" content="summary">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body id="top">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <div class="page">
+    <aside class="bench" aria-label="Spaced Out">
+      <div class="bench-top">
+        <p class="bench-name">Spaced Out</p>
+        <p class="bench-id">Bench 1127</p>
+        <p class="bench-now">On the bench: <span id="bench-project" aria-live="polite">StreamGuard</span></p>
+      </div>
+
+      <figure class="bench-portrait">
+        <div class="portrait-media">
+          <img src="assets/avatar.jpg" width="460" height="460" alt="A skull wearing a white astronaut helmet, set against a starfield.">
+        </div>
+        <figcaption>Spaced Out, in low orbit.</figcaption>
+      </figure>
+
+      <div class="bench-bottom">
+        <p class="bench-role">Vibecoder · Repair technician · Game enjoyer</p>
+        <p class="bench-links">
+          <a href="https://github.com/Spaced1127" target="_blank" rel="me noopener">GitHub ↗</a>
+          <a href="mailto:mtlewis1127@gmail.com">Email</a>
+        </p>
+      </div>
+    </aside>
+
+    <main id="main" class="content">
+      <section class="hero" aria-labelledby="hero-title">
+        <nav class="hero-nav" aria-label="Primary">
+          <a href="#work">Work</a>
+          <a href="#intake">What needs fixing</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <a class="nav-github" href="https://github.com/Spaced1127" target="_blank" rel="noopener">GitHub ↗</a>
+        </nav>
+
+        <div class="hero-main">
+          <h1 id="hero-title">I fix software<br> for a living.</h1>
+          <p class="hero-lede">I'm Spaced Out: a vibecoder, repair technician and game enjoyer. I build local-first tools and port games to hardware they were never meant to run on.</p>
+          <div class="hero-actions">
+            <a class="button" href="#work">See the work</a>
+            <a class="text-link" href="mailto:mtlewis1127@gmail.com?subject=Something%20broken">Email me</a>
+          </div>
+          <p class="hero-latest">Latest from the bench: <a href="#streamguard">StreamGuard v0.3.3</a>, a Twitch ad shield that runs in the browser.</p>
+        </div>
+
+        <nav class="hero-index" aria-label="Selected work">
+          <a href="#streamguard"><span class="hero-index-name">StreamGuard</span><span class="hero-index-kind">Twitch ad shield</span></a>
+          <a href="#svr2011"><span class="hero-index-name">SVR 2011</span><span class="hero-index-kind">Switch port</span></a>
+          <a href="#lapvoice"><span class="hero-index-name">LapVoice</span><span class="hero-index-kind">Local lap coach</span></a>
+          <a href="#repairbench"><span class="hero-index-name">Repair Bench</span><span class="hero-index-kind">Shop work orders</span></a>
+        </nav>
+      </section>
+
+      <section class="intake" id="intake" aria-labelledby="intake-title">
+        <div class="reveal">
+          <h2 id="intake-title">What needs fixing?</h2>
+          <p class="section-lede">Here's one from the bench. Pick the symptom closest to yours to see the others.</p>
+        </div>
+
+        <fieldset class="intake-widget">
+          <legend class="visually-hidden">Choose a symptom</legend>
+
+          <input class="visually-hidden" type="radio" name="problem" id="p-ads" data-project="StreamGuard" checked>
+          <input class="visually-hidden" type="radio" name="problem" id="p-switch" data-project="SVR 2011 on Switch">
+          <input class="visually-hidden" type="radio" name="problem" id="p-laps" data-project="LapVoice CLI">
+          <input class="visually-hidden" type="radio" name="problem" id="p-shop" data-project="Repair Bench">
+
+          <div class="intake-results">
+            <article class="intake-result" id="result-ads">
+              <p class="result-name">StreamGuard</p>
+              <dl>
+                <div><dt>Problem</dt><dd>Twitch stitches ads into the live playlist. A normal blocker leaves a black hole where the ad was.</dd></div>
+                <div><dt>The fix</dt><dd>Hook the player before it starts, read the ad markers, and swap to a clean backup feed. If there isn't one, blank the ad segments locally.</dd></div>
+                <div><dt>Status</dt><dd><span class="status-dot" aria-hidden="true"></span>v0.3.3 · Chrome &amp; Firefox · MIT</dd></div>
+              </dl>
+              <a class="result-link" href="#streamguard">Read the StreamGuard job ↓</a>
+            </article>
+
+            <article class="intake-result" id="result-switch">
+              <p class="result-name">SVR 2011 on Switch</p>
+              <dl>
+                <div><dt>Problem</dt><dd>WWE SmackDown vs. Raw 2011, stuck on the Xbox 360 it shipped on.</dd></div>
+                <div><dt>The fix</dt><dd>Statically recompile the PowerPC code to C++, build it for the Switch with ReXGlue and libnx, then replace the renderer path that can't keep up.</dd></div>
+                <div><dt>Status</dt><dd><span class="status-dot" aria-hidden="true"></span>33–35 fps in-ring · source-only builder</dd></div>
+              </dl>
+              <a class="result-link" href="#svr2011">Read the SVR 2011 job ↓</a>
+            </article>
+
+            <article class="intake-result" id="result-laps">
+              <p class="result-name">LapVoice CLI</p>
+              <dl>
+                <div><dt>Problem</dt><dd>You finish a lap and still don't know where the time actually went.</dd></div>
+                <div><dt>The fix</dt><dd>Compare every lap to your best of the session, find the loss, and say it out loud, with the model running on your own PC.</dd></div>
+                <div><dt>Status</dt><dd><span class="status-dot" aria-hidden="true"></span>Python · MIT · no account</dd></div>
+              </dl>
+              <a class="result-link" href="#lapvoice">Read the LapVoice job ↓</a>
+            </article>
+
+            <article class="intake-result" id="result-shop">
+              <p class="result-name">Repair Bench</p>
+              <dl>
+                <div><dt>Problem</dt><dd>Tickets, photos, parts and invoices living in five different places.</dd></div>
+                <div><dt>The fix</dt><dd>One phone-friendly work order app with a real status workflow, photo compare, parts stock and card payments. Each shop runs its own copy.</dd></div>
+                <div><dt>Status</dt><dd><span class="status-dot" aria-hidden="true"></span>Next.js + Supabase · v1.0.0</dd></div>
+              </dl>
+              <a class="result-link" href="#repairbench">Read the Repair Bench job ↓</a>
+            </article>
+          </div>
+
+          <p class="intake-choose">Choose another symptom</p>
+
+          <div class="intake-choices">
+            <label for="p-ads"><span>Ads break my Twitch streams</span></label>
+            <label for="p-switch"><span>A game is stuck on the wrong console</span></label>
+            <label for="p-laps"><span>I can't tell where I'm losing lap time</span></label>
+            <label for="p-shop"><span>My repair shop runs on paper</span></label>
+          </div>
+        </fieldset>
+      </section>
+
+      <section class="work" id="work" aria-labelledby="work-title">
+        <div class="work-inner">
+          <header class="work-head reveal">
+            <h2 id="work-title">Selected work</h2>
+            <p class="section-lede">Four jobs, in full. The short version is above; here's what was actually wrong.</p>
+            <nav class="work-index" aria-label="Projects">
+              <a href="#streamguard">StreamGuard</a>
+              <a href="#svr2011">SVR 2011 on Switch</a>
+              <a href="#lapvoice">LapVoice CLI</a>
+              <a href="#repairbench">Repair Bench</a>
+            </nav>
+          </header>
+
+          <article class="job job--streamguard" id="streamguard">
+            <div class="job-copy reveal" style="--delay: 0ms">
+              <h3>StreamGuard</h3>
+              <p class="job-sub">A Twitch ad shield that runs entirely in your browser.</p>
+              <p>Twitch stitches ads into the live HLS playlist, so a normal blocker can leave you staring at a black hole. StreamGuard hooks the player before it starts, reads the ad markers, and asks Twitch for a clean alternate feed. If every feed is ad-laden, it blanks the ad segments locally and keeps their audio and video out of the decoder. No proxy, no account, no telemetry.</p>
+              <dl class="spec">
+                <div><dt>Platform</dt><dd>Chrome, Edge, Brave, Firefox 142+</dd></div>
+                <div><dt>Status</dt><dd>v0.3.3, November 2026</dd></div>
+                <div><dt>Licence</dt><dd>MIT</dd></div>
+                <div><dt>Built with</dt><dd>TypeScript, Manifest V3</dd></div>
+              </dl>
+              <p class="job-links">
+                <a href="https://github.com/Spaced1127/StreamGuard" target="_blank" rel="noopener">Read the source ↗</a>
+                <a href="https://github.com/Spaced1127/StreamGuard/releases/latest" target="_blank" rel="noopener">Download v0.3.3 ↗</a>
+              </p>
+            </div>
+
+            <figure class="job-visual reveal" style="--delay: 120ms">
+              <div class="visual-field visual-field--sg">
+                <div class="ui ui--streamguard" data-ui>
+                  <div class="sg-head">
+                    <p class="sg-brand">StreamGuard</p>
+                    <p class="sg-version">v0.3.3</p>
+                  </div>
+                  <div class="sg-status">
+                    <span class="sg-dot" aria-hidden="true"></span>
+                    <div>
+                      <strong>Shield on</strong>
+                      <small>Live · twitch.tv/example</small>
+                    </div>
+                    <span class="sg-toggle" aria-hidden="true"></span>
+                  </div>
+                  <div class="sg-stat">
+                    <b>3</b>
+                    <span>breaks handled this session</span>
+                  </div>
+                  <ul class="sg-list">
+                    <li><span>Playlist shield</span><span class="on">On</span></li>
+                    <li><span>Clean backup swap</span><span class="on">On</span></li>
+                    <li><span>Side-ad mute</span><span class="on">On</span></li>
+                  </ul>
+                  <p class="sg-foot">No proxy · No account · No telemetry</p>
+                </div>
+              </div>
+              <figcaption>The popup, as it ships.</figcaption>
+            </figure>
+          </article>
+
+          <article class="job job--svr" id="svr2011">
+            <figure class="job-visual reveal" style="--delay: 0ms">
+              <div class="svr-shot">
+                <img src="assets/switch-teardown.jpg" width="1600" height="970" alt="The inside of a Nintendo Switch: mainboard, fan, heat pipe, battery and controller boards." loading="lazy" decoding="async">
+                <div class="ui ui--perf" data-ui>
+                  <p class="ui-label">In-ring, as tested</p>
+                  <p class="perf-big">33–35 <span>fps</span></p>
+                  <div class="perf-rows">
+                    <div class="perf-row"><span>Stock</span><span class="perf-bar"><i style="--pct:55"></i></span><b>33</b></div>
+                    <div class="perf-row"><span>Overclocked</span><span class="perf-bar"><i style="--pct:58"></i></span><b>35</b></div>
+                    <div class="perf-row"><span>Menus</span><span class="perf-bar"><i style="--pct:100"></i></span><b>60</b></div>
+                  </div>
+                  <p class="ui-note">deko3d · 720p · Switch 1</p>
+                </div>
+              </div>
+              <figcaption>The target, opened up. Switch teardown photo: PantheraLeo1359531, CC BY 4.0.</figcaption>
+            </figure>
+
+            <div class="job-copy reveal" style="--delay: 120ms">
+              <h3>SVR 2011 on Switch</h3>
+              <p class="job-sub">WWE SmackDown vs. Raw 2011, running natively. Not an emulator.</p>
+              <p>The Xbox 360 version's PowerPC code is statically recompiled to C++ with ReXGlue, then built for the Switch with devkitA64 and libnx. The first path ran through Mesa's NVK; the deko3d branch does the same 720p frame with less overhead. In-ring is 33–35 fps, menus are 60, and the public release is a source-only builder. You bring your own copy of the game.</p>
+              <dl class="spec">
+                <div><dt>Target</dt><dd>Nintendo Switch 1, Atmosphère</dd></div>
+                <div><dt>Renderer</dt><dd>deko3d / Mesa NVK</dd></div>
+                <div><dt>In-ring</dt><dd>33 fps stock, 35 fps overclocked</dd></div>
+                <div><dt>Release</dt><dd>deko3d-v2.1.8, November 2026</dd></div>
+              </dl>
+              <p class="job-links">
+                <a href="https://github.com/Spaced1127/SVR2011-NX-Port" target="_blank" rel="noopener">Read the build notes ↗</a>
+              </p>
+            </div>
+          </article>
+
+          <article class="job job--lapvoice" id="lapvoice">
+            <div class="job-copy reveal" style="--delay: 0ms">
+              <h3>LapVoice CLI</h3>
+              <p class="job-sub">A lap coach that never leaves your PC.</p>
+              <p>After each lap, it compares you to your best lap of the session, finds where you lost time, and says it through your speakers. The model runs locally with Ollama; there is no account, API key or subscription. Without Ollama, the built-in template tips still work. The desktop app adds overlays, a track map and movable widgets; this repo is the free command-line coach.</p>
+              <dl class="spec">
+                <div><dt>Platform</dt><dd>Windows 10/11, Python 3.10+</dd></div>
+                <div><dt>Model</dt><dd>Ollama, running locally</dd></div>
+                <div><dt>Licence</dt><dd>MIT</dd></div>
+                <div><dt>Demo</dt><dd><code>--demo</code> with simulated laps</dd></div>
+              </dl>
+              <p class="job-links">
+                <a href="https://github.com/Spaced1127/lapvoice-cli" target="_blank" rel="noopener">Read the source ↗</a>
+                <a href="https://lapvoice.com" target="_blank" rel="noopener">The desktop app ↗</a>
+              </p>
+            </div>
+
+            <figure class="job-visual reveal" style="--delay: 120ms">
+              <div class="visual-field visual-field--lv">
+                <div class="ui ui--lapvoice" data-ui>
+                  <div class="lv-top">
+                    <span class="ui-label">Lap 14</span>
+                    <span class="lv-delta">+0.214</span>
+                  </div>
+                  <blockquote>“You're braking about eight metres early into Turn 4. Pick the throttle back up sooner.”</blockquote>
+                  <div class="lv-meta">
+                    <span>Best 1:32.204</span>
+                    <span>This lap 1:32.418</span>
+                  </div>
+                  <div class="lv-wave" aria-hidden="true">
+                    <i style="--h:32%"></i><i style="--h:58%"></i><i style="--h:44%"></i><i style="--h:72%"></i><i style="--h:35%"></i><i style="--h:88%"></i><i style="--h:52%"></i><i style="--h:64%"></i><i style="--h:28%"></i><i style="--h:76%"></i><i style="--h:46%"></i><i style="--h:92%"></i><i style="--h:38%"></i><i style="--h:68%"></i><i style="--h:54%"></i><i style="--h:80%"></i><i style="--h:30%"></i><i style="--h:62%"></i><i style="--h:42%"></i><i style="--h:74%"></i><i style="--h:50%"></i><i style="--h:86%"></i><i style="--h:36%"></i><i style="--h:60%"></i>
+                  </div>
+                  <p class="ui-note">Local model · Ollama · no account</p>
+                </div>
+              </div>
+              <figcaption>Example tip. Your lap times will differ.</figcaption>
+            </figure>
+          </article>
+
+          <article class="job job--repair" id="repairbench">
+            <figure class="job-visual reveal" style="--delay: 0ms">
+              <div class="visual-field visual-field--rb">
+                <div class="ui ui--ticket" data-ui>
+                  <div class="ticket-top">
+                    <div>
+                      <p class="ticket-shop">Repair Bench</p>
+                      <p class="ticket-id">Ticket 1042</p>
+                    </div>
+                    <span class="ticket-status">Waiting on parts</span>
+                  </div>
+                  <dl class="ticket-grid">
+                    <div><dt>Customer</dt><dd>J. Rivera</dd></div>
+                    <div><dt>Device</dt><dd>Switch OLED</dd></div>
+                    <div><dt>Issue</dt><dd>No charge / USB-C port</dd></div>
+                    <div><dt>Estimate</dt><dd>$85</dd></div>
+                  </dl>
+                  <div class="ticket-note">
+                    <span>Latest note</span>
+                    <p>Port replaced. Battery holds. Running a 24-hour charge test before pickup.</p>
+                  </div>
+                  <div class="ticket-foot">
+                    <span>Customer updated by text</span>
+                    <span>2:14 PM</span>
+                  </div>
+                </div>
+              </div>
+              <figcaption>Example work order. Names and devices are made up.</figcaption>
+            </figure>
+
+            <div class="job-copy reveal" style="--delay: 120ms">
+              <h3>Repair Bench</h3>
+              <p class="job-sub">Work orders for game console repair shops.</p>
+              <p>Tickets, customers, devices, photos, parts and invoices in one phone-friendly app. Each shop runs its own copy, with a customizable status workflow, before/after photo compare, low-stock flags, Stripe card payments and email or text updates. Built for the way a repair bench actually works, not the way a SaaS demo does.</p>
+              <dl class="spec">
+                <div><dt>Built with</dt><dd>Next.js 15, React 19, Supabase</dd></div>
+                <div><dt>Payments</dt><dd>Stripe</dd></div>
+                <div><dt>Updates</dt><dd>Resend, Twilio</dd></div>
+                <div><dt>Release</dt><dd>v1.0.0</dd></div>
+              </dl>
+              <p class="job-links">
+                <a href="https://github.com/Spaced1127/RepairTracker" target="_blank" rel="noopener">Read the setup guide ↗</a>
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="about" id="about" aria-labelledby="about-title">
+        <h2 id="about-title" class="reveal">How I work</h2>
+
+        <div class="about-photos reveal" style="--delay: 80ms">
+          <figure>
+            <img src="assets/reparieren-und-basteln-29983460260.jpg" width="1920" height="1080" alt="A crowded electronics workbench with a power supply, soldering tools, small parts drawers and a green lamp." loading="lazy" decoding="async">
+            <figcaption>A repair bench in the wild. Mine is less tidy. Photo: Wolfgang Stief, CC0.</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/nintendo-switch-console-docked-wjoyconrb.jpg" width="1920" height="1097" alt="A Nintendo Switch in its dock with blue and red Joy-Con controllers." loading="lazy" decoding="async">
+            <figcaption>The target hardware. Photo: Evan-Amos, public domain.</figcaption>
+          </figure>
+        </div>
+
+        <div class="letter">
+          <p class="lead reveal">Repair work teaches a simple order: hear the symptom, reproduce it, find the actual fault, then write down what you did so the next person can follow it. I build software the same way.</p>
+          <p class="reveal" style="--delay: 60ms">That's why the README is part of the product. If you can't install it from the instructions, it isn't finished. StreamGuard ships with a full install and troubleshooting guide. SVR 2011 ships as a builder because the game's code isn't mine to distribute. Repair Bench ships with a setup script and a paste-the-SQL route for people who don't live in a terminal.</p>
+          <p class="reveal" style="--delay: 120ms">I like tools that are local-first, small enough to understand, and honest about their limits. No account if I can avoid it. No telemetry. If it needs a server, it should be your server.</p>
+          <p class="reveal" style="--delay: 180ms">I'm a vibecoder at the forefront, which is a fancy way of saying I use every tool available and then check the work. The bench keeps me honest: <mark>the console either boots or it doesn't.</mark></p>
+          <p class="signoff reveal" style="--delay: 240ms">Spaced Out</p>
+          <p class="signoff-role reveal" style="--delay: 280ms">Vibecoder, repair technician, game enjoyer.</p>
+          <p class="toolbox reveal" style="--delay: 320ms"><strong>Current toolbox:</strong> TypeScript, Python, C++, Next.js, Supabase, Ollama, ReXGlue, and a soldering iron that has seen things.</p>
+        </div>
+      </section>
+
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div class="contact-grid">
+          <div class="contact-copy">
+            <h2 id="contact-title" class="reveal">Got something broken?</h2>
+            <p class="contact-prompt reveal" style="--delay: 60ms">Tell me the symptom. I'll tell you if it's a software problem, a hardware problem, or a good excuse to take it apart.</p>
+          </div>
+          <div class="contact-action">
+            <a class="contact-field reveal" style="--delay: 120ms" href="mailto:mtlewis1127@gmail.com?subject=Something%20broken">
+              <span>mtlewis1127@gmail.com</span>
+              <span class="contact-arrow" aria-hidden="true">→</span>
+            </a>
+            <p class="contact-note reveal" style="--delay: 160ms">No form, no newsletter. Just email.</p>
+            <p class="contact-github reveal" style="--delay: 200ms">Or find the code on <a href="https://github.com/Spaced1127" target="_blank" rel="noopener">GitHub ↗</a>.</p>
+          </div>
+        </div>
+        <p class="contact-kinds reveal" style="--delay: 260ms">Ports, tools, weird hardware, and jobs that start with “this shouldn't be possible.”</p>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <img class="footer-media" src="assets/twilight.jpg" width="2400" height="1600" alt="A clear twilight sky fading from deep blue to an orange horizon over dark water, with a crescent moon." decoding="async">
+    <div class="footer-content">
+      <div class="footer-top">
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="#work">Work</a>
+          <a href="#intake">What needs fixing</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <a href="https://github.com/Spaced1127" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="mailto:mtlewis1127@gmail.com">Email</a>
+        </nav>
+        <a class="footer-top-link" href="#top">Back to top ↑</a>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-wordmark" aria-hidden="true">Spaced Out</p>
+        <p class="footer-legal">© 2026 Spaced Out. Built by hand, checked in a browser.</p>
+        <p class="footer-credits">Photos: <a href="https://commons.wikimedia.org/w/index.php?curid=113255965" target="_blank" rel="noopener">repair bench</a> by Wolfgang Stief (CC0); <a href="https://commons.wikimedia.org/wiki/File:Nintendo-Switch-Console-Docked-wJoyConRB.jpg" target="_blank" rel="noopener">Switch</a> by Evan-Amos (public domain); <a href="https://commons.wikimedia.org/wiki/File:Innenleben_der_Nintendo_Switch_20230405_HOF09139_RAW-Export.png" target="_blank" rel="noopener">teardown</a> by PantheraLeo1359531 (CC BY 4.0); <a href="https://picsum.photos/id/721/2400/1600" target="_blank" rel="noopener">twilight</a> by Jeremy Ricketts (Unsplash), via picsum.photos. Avatar by Spaced Out.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
