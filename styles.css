@@ -579,12 +579,51 @@ p {
   grid-column: 6 / span 7;
 }
 
-.job--svr .job-visual,
+.job--svr .job-visual {
+  grid-column: 1 / -1;
+}
+
+.job--svr .job-copy {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: 4fr 7fr;
+  gap: 16px 48px;
+  align-items: start;
+  margin-top: 24px;
+}
+
+.job--svr .job-copy h3 {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.job--svr .job-copy .job-sub {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.job--svr .job-copy > p:not(.job-sub):not(.job-links) {
+  grid-column: 2;
+  grid-row: 1;
+  max-width: 62ch;
+}
+
+.job--svr .spec {
+  grid-column: 2;
+  grid-row: 2;
+  max-width: 62ch;
+}
+
+.job--svr .job-links {
+  grid-column: 2;
+  grid-row: 3;
+  max-width: 62ch;
+}
+
 .job--repair .job-visual {
   grid-column: 1 / span 7;
 }
 
-.job--svr .job-copy,
 .job--repair .job-copy {
   grid-column: 9 / span 4;
 }
@@ -1055,6 +1094,7 @@ p {
   width: 100%;
   aspect-ratio: 16 / 10;
   object-fit: cover;
+  filter: saturate(.88) contrast(1.02);
 }
 
 .about-photos figcaption {
@@ -1407,6 +1447,21 @@ p {
     max-width: 620px;
   }
 
+  .job--svr .job-copy {
+    grid-template-columns: 1fr;
+    gap: 0;
+    max-width: none;
+  }
+
+  .job--svr .job-copy h3,
+  .job--svr .job-copy .job-sub,
+  .job--svr .job-copy > p:not(.job-sub):not(.job-links),
+  .job--svr .spec,
+  .job--svr .job-links {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
   .visual-field {
     min-height: 0;
     padding: 48px 32px;
@@ -1523,6 +1578,14 @@ p {
 }
 
 @media (max-width: 700px) {
+  .bench {
+    padding: 16px;
+  }
+
+  .bench-portrait {
+    padding: 10px 0;
+  }
+
   .bench-portrait img {
     width: min(42vw, 160px);
   }
