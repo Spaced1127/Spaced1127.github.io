@@ -31,9 +31,9 @@ The site is served from the `main` branch of the `Spaced1127/spaced.github.io` r
 
 - Avatar: Spaced Out
 - StreamGuard popup screenshots: Spaced Out
+- SVR 2011 title screen and match select screenshots: Spaced Out
 - Repair bench: "Reparieren und Basteln" by Wolfgang Stief, CC0, via Wikimedia Commons
-- Nintendo Switch: "Nintendo-Switch-Console-Docked-wJoyConRB" by Evan-Amos, public domain, via Wikimedia Commons
 - Switch teardown: "Innenleben der Nintendo Switch" by PantheraLeo1359531, CC BY 4.0, via Wikimedia Commons
 - Twilight: "Clear twilight sky fading from deep blue to an orange horizon" by Jeremy Ricketts, Unsplash, via picsum.photos
 
-The StreamGuard popup is a real screenshot. The performance readout, LapVoice tip and Repair Bench ticket are drawn in HTML and CSS, and the names, ticket and lap figures inside them are illustrative.
+The StreamGuard popup and the SVR 2011 game screens are real captures. The performance readout, LapVoice tip and Repair Bench ticket are drawn in HTML and CSS, and the names, ticket and lap figures inside them are illustrative.

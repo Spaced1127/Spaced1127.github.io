@@ -620,6 +620,12 @@ p {
   max-width: 62ch;
 }
 
+.job--svr .ui--perf {
+  grid-column: 1;
+  grid-row: 3;
+  margin-top: 24px;
+}
+
 .job--repair .job-visual {
   grid-column: 1 / span 7;
 }
@@ -760,22 +766,21 @@ p {
   display: none;
 }
 
-.svr-shot {
-  position: relative;
-  background: var(--surface-2);
+.svr-shots {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
 }
 
-.svr-shot > img {
+.svr-shots img {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
 }
 
 .ui--perf {
-  position: absolute;
-  right: 24px;
-  bottom: 24px;
   width: 252px;
+  max-width: 100%;
   padding: 20px;
   background: var(--dark);
 }
@@ -1361,6 +1366,7 @@ p {
 
   .job--svr .job-copy h3,
   .job--svr .job-copy .job-sub,
+  .job--svr .ui--perf,
   .job--svr .job-copy > p:not(.job-sub):not(.job-links),
   .job--svr .spec,
   .job--svr .job-links {
@@ -1487,6 +1493,10 @@ p {
   .sg-shot {
     height: 400px;
   }
+
+  .svr-shots {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 700px) {
@@ -1567,11 +1577,9 @@ p {
   }
 
   .ui--perf {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    width: auto;
-    margin: -40px 16px 0;
+    width: 100%;
+    max-width: 280px;
+    margin-top: 24px;
   }
 
   .visual-field {
